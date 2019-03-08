@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pukana" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oks-cl-2GU" userLabel="idleView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouv-FE-MCb" customClass="RoundButton" customModule="Pukana" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="577" width="335" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="sF4-d7-Lgm"/>
+                                        </constraints>
+                                        <state key="normal" title="GO!"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="styleForInspector">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="goAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L6x-u3-xX7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVa-7v-ejk" customClass="RoundButton" customModule="Pukana" customModuleProvider="target">
+                                        <rect key="frame" x="307" y="20" width="48" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="CTy-Kg-R0I"/>
+                                        </constraints>
+                                        <state key="normal" title="Scores"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="styleForInspector">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="goAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gxB-K9-sby"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TVa-7v-ejk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Oks-cl-2GU" secondAttribute="leading" constant="20" symbolic="YES" id="0Yy-eN-tdN"/>
+                                    <constraint firstAttribute="bottom" secondItem="ouv-FE-MCb" secondAttribute="bottom" constant="20" id="95O-Ee-lEr"/>
+                                    <constraint firstAttribute="trailing" secondItem="ouv-FE-MCb" secondAttribute="trailing" constant="20" id="INs-iB-Xh3"/>
+                                    <constraint firstItem="ouv-FE-MCb" firstAttribute="leading" secondItem="Oks-cl-2GU" secondAttribute="leading" constant="20" id="XhS-28-zLe"/>
+                                    <constraint firstItem="TVa-7v-ejk" firstAttribute="top" secondItem="Oks-cl-2GU" secondAttribute="top" constant="20" id="gYS-0S-xie"/>
+                                    <constraint firstAttribute="trailing" secondItem="TVa-7v-ejk" secondAttribute="trailing" constant="20" id="yQT-5p-Cs8"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGP-KY-WCF" userLabel="resultView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{SCORE}}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GP4-8J-TJN">
+                                        <rect key="frame" x="147.5" y="263" width="80" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0M-cN-RDq" customClass="RoundButton" customModule="Pukana" customModuleProvider="target">
+                                        <rect key="frame" x="162.5" y="304" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="A0M-cN-RDq" secondAttribute="height" id="wbq-P5-NNO"/>
+                                            <constraint firstAttribute="height" constant="50" id="yOU-Vu-Oq7"/>
+                                        </constraints>
+                                        <state key="normal" title="Retry"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="styleForInspector">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="goAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p3N-sG-Ez7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iy2-R0-Lv9" customClass="RoundButton" customModule="Pukana" customModuleProvider="target">
+                                        <rect key="frame" x="162.5" y="364" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="iy2-R0-Lv9" secondAttribute="height" multiplier="1:1" id="5Pi-e9-j0X"/>
+                                            <constraint firstAttribute="height" constant="50" id="f8l-K5-lsG"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="styleForInspector">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="goAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ipf-4A-pEW"/>
+                                            <action selector="goHome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MFW-p2-l9F"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="GP4-8J-TJN" firstAttribute="centerX" secondItem="BGP-KY-WCF" secondAttribute="centerX" id="6oC-Ra-d72"/>
+                                    <constraint firstItem="iy2-R0-Lv9" firstAttribute="top" secondItem="A0M-cN-RDq" secondAttribute="bottom" constant="10" id="Ovt-i6-hhZ"/>
+                                    <constraint firstItem="iy2-R0-Lv9" firstAttribute="centerX" secondItem="BGP-KY-WCF" secondAttribute="centerX" id="aKX-M9-Bgl"/>
+                                    <constraint firstItem="GP4-8J-TJN" firstAttribute="centerY" secondItem="BGP-KY-WCF" secondAttribute="centerY" constant="-50" id="au0-LN-keL"/>
+                                    <constraint firstItem="A0M-cN-RDq" firstAttribute="centerX" secondItem="BGP-KY-WCF" secondAttribute="centerX" id="bEf-3V-C24"/>
+                                    <constraint firstItem="A0M-cN-RDq" firstAttribute="top" secondItem="GP4-8J-TJN" secondAttribute="bottom" constant="20" id="jax-MQ-fbB"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C57-nR-8Ek">
+                                <rect key="frame" x="175.5" y="303.5" width="24.5" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BGP-KY-WCF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2JR-SU-6ek"/>
+                            <constraint firstAttribute="trailing" secondItem="Oks-cl-2GU" secondAttribute="trailing" id="8Hi-Pm-UgG"/>
+                            <constraint firstItem="Oks-cl-2GU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Apx-cL-BNc"/>
+                            <constraint firstItem="BGP-KY-WCF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Dvo-5q-Inu"/>
+                            <constraint firstItem="Oks-cl-2GU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="IoI-nE-gbg"/>
+                            <constraint firstItem="C57-nR-8Ek" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TO3-ZG-wfa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BGP-KY-WCF" secondAttribute="bottom" id="fKx-3S-fCh"/>
+                            <constraint firstItem="BGP-KY-WCF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hs4-W1-45V"/>
+                            <constraint firstItem="C57-nR-8Ek" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r3t-bV-ff2"/>
+                            <constraint firstItem="Oks-cl-2GU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rJZ-nT-koj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="countdownLabel" destination="C57-nR-8Ek" id="A6F-Fe-RSf"/>
+                        <outlet property="idleUIView" destination="Oks-cl-2GU" id="7gZ-cP-ZfH"/>
+                        <outlet property="resultUIView" destination="BGP-KY-WCF" id="TXN-WR-gxy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
