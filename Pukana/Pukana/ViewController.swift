@@ -8,6 +8,28 @@
 
 import UIKit
 
+protocol FaceInfoService {
+    func fetchLeftEyeValue() -> Double
+    func fetchRightEyeValue() -> Double
+    func fetchTongueValue() -> Double
+}
+
+class PukanaConverter {
+    private static let leftEyeWeight = 1.0
+    private static let rightEyeWeight = 1.0
+    private static let tongueWeight = 1.0
+    static func getScore(fromLeftEye leftEye: Double, rightEye: Double, tongue:Double) -> Int {
+        print("LeftEye: \(leftEye) - RightEye: \(rightEye) - Tongue: \(tongue)")
+        let total: Double = leftEye * leftEyeWeight + rightEye * rightEyeWeight + tongue * tongueWeight
+        let totalAverage = total / leftEyeWeight + rightEyeWeight + tongueWeight
+        let score = Int(totalAverage * 1000.0)
+        print("Score: \(score)")
+        return score
+    }
+}
+
+
+
 class ViewController: UIViewController {
 
     
@@ -50,7 +72,10 @@ class ViewController: UIViewController {
             
         case .result:
             resultUIView.isHidden = false
-            
+            let _ = PukanaConverter.getScore(fromLeftEye: Double.random(in: 0...1),
+                                                  rightEye: Double.random(in: 0...1),
+                                                  tongue: Double.random(in: 0...1))
+           
         }
         gameState = state
     }
@@ -74,6 +99,11 @@ class ViewController: UIViewController {
         }
         timer?.fire()
     }
+    
+    private func saveScore(){
+        
+    }
+    
     
     // MARK: - Actions
     @IBAction func goAction(_ sender: UIButton) {
