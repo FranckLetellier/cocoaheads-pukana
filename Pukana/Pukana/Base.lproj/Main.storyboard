@@ -140,6 +140,7 @@
                     <connections>
                         <outlet property="countdownLabel" destination="C57-nR-8Ek" id="A6F-Fe-RSf"/>
                         <outlet property="idleUIView" destination="Oks-cl-2GU" id="7gZ-cP-ZfH"/>
+                        <outlet property="resultScoreLabel" destination="GP4-8J-TJN" id="GBk-IU-bsV"/>
                         <outlet property="resultUIView" destination="BGP-KY-WCF" id="TXN-WR-gxy"/>
                     </connections>
                 </viewController>

@@ -14,6 +14,9 @@
 		81E80B502232844800CF6E80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E80B4E2232844800CF6E80 /* LaunchScreen.storyboard */; };
 		81E80B582232A32E00CF6E80 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E80B572232A32E00CF6E80 /* RoundButton.swift */; };
 		81E80B5B2232A82800CF6E80 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E80B5A2232A82800CF6E80 /* Assets.swift */; };
+		81E80B5E2234347C00CF6E80 /* PukanaConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E80B5D2234347C00CF6E80 /* PukanaConverter.swift */; };
+		81E80B612234356E00CF6E80 /* FaceInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E80B602234356E00CF6E80 /* FaceInfoService.swift */; };
+		81E80B63223435FD00CF6E80 /* FaceInfoServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E80B62223435FD00CF6E80 /* FaceInfoServiceMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		81E80B512232844800CF6E80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81E80B572232A32E00CF6E80 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		81E80B5A2232A82800CF6E80 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		81E80B5D2234347C00CF6E80 /* PukanaConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PukanaConverter.swift; sourceTree = "<group>"; };
+		81E80B602234356E00CF6E80 /* FaceInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceInfoService.swift; sourceTree = "<group>"; };
+		81E80B62223435FD00CF6E80 /* FaceInfoServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceInfoServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +64,15 @@
 		81E80B442232844700CF6E80 /* Pukana */ = {
 			isa = PBXGroup;
 			children = (
+				81E80B5F223434BC00CF6E80 /* Services */,
+				81E80B5C2234344100CF6E80 /* Ressources */,
 				81E80B592232A33800CF6E80 /* Views */,
 				81E80B452232844700CF6E80 /* AppDelegate.swift */,
 				81E80B472232844700CF6E80 /* ViewController.swift */,
+				81E80B5D2234347C00CF6E80 /* PukanaConverter.swift */,
 				81E80B492232844700CF6E80 /* Main.storyboard */,
-				81E80B4C2232844800CF6E80 /* Assets.xcassets */,
 				81E80B4E2232844800CF6E80 /* LaunchScreen.storyboard */,
 				81E80B512232844800CF6E80 /* Info.plist */,
-				81E80B5A2232A82800CF6E80 /* Assets.swift */,
 			);
 			path = Pukana;
 			sourceTree = "<group>";
@@ -76,6 +83,24 @@
 				81E80B572232A32E00CF6E80 /* RoundButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		81E80B5C2234344100CF6E80 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				81E80B4C2232844800CF6E80 /* Assets.xcassets */,
+				81E80B5A2232A82800CF6E80 /* Assets.swift */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		81E80B5F223434BC00CF6E80 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				81E80B602234356E00CF6E80 /* FaceInfoService.swift */,
+				81E80B62223435FD00CF6E80 /* FaceInfoServiceMock.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81E80B612234356E00CF6E80 /* FaceInfoService.swift in Sources */,
 				81E80B582232A32E00CF6E80 /* RoundButton.swift in Sources */,
+				81E80B5E2234347C00CF6E80 /* PukanaConverter.swift in Sources */,
 				81E80B482232844700CF6E80 /* ViewController.swift in Sources */,
+				81E80B63223435FD00CF6E80 /* FaceInfoServiceMock.swift in Sources */,
 				81E80B5B2232A82800CF6E80 /* Assets.swift in Sources */,
 				81E80B462232844700CF6E80 /* AppDelegate.swift in Sources */,
 			);

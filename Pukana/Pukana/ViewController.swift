@@ -8,31 +8,9 @@
 
 import UIKit
 
-protocol FaceInfoService {
-    func fetchLeftEyeValue() -> Double
-    func fetchRightEyeValue() -> Double
-    func fetchTongueValue() -> Double
-}
-
-class PukanaConverter {
-    private static let leftEyeWeight = 1.0
-    private static let rightEyeWeight = 1.0
-    private static let tongueWeight = 1.0
-    static func getScore(fromLeftEye leftEye: Double, rightEye: Double, tongue:Double) -> Int {
-        print("LeftEye: \(leftEye) - RightEye: \(rightEye) - Tongue: \(tongue)")
-        let total: Double = leftEye * leftEyeWeight + rightEye * rightEyeWeight + tongue * tongueWeight
-        let totalAverage = total / leftEyeWeight + rightEyeWeight + tongueWeight
-        let score = Int(totalAverage * 1000.0)
-        print("Score: \(score)")
-        return score
-    }
-}
-
-
-
 class ViewController: UIViewController {
-
     
+    // Gamestate
     enum GameState {
         case idle
         case countdown
@@ -40,20 +18,25 @@ class ViewController: UIViewController {
     }
     private var gameState = GameState.idle
     
+    // Services
+    let faceInfoService: FaceInfoService = FaceInfoServiceMock()
     
-    var timer: Timer?
-    var count = 3
+    // Coundown
+    private var timer: Timer?
+    private var count = 3
     
+    // UI
     @IBOutlet weak var countdownLabel: UILabel!
     @IBOutlet weak var idleUIView: UIView!
     @IBOutlet weak var resultUIView: UIView!
     
+    @IBOutlet weak var resultScoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         goTo(state: .idle)
     }
-
+    
     private func resetUI(){
         idleUIView.isHidden = true
         resultUIView.isHidden = true
@@ -72,10 +55,8 @@ class ViewController: UIViewController {
             
         case .result:
             resultUIView.isHidden = false
-            let _ = PukanaConverter.getScore(fromLeftEye: Double.random(in: 0...1),
-                                                  rightEye: Double.random(in: 0...1),
-                                                  tongue: Double.random(in: 0...1))
-           
+            saveScore()
+            
         }
         gameState = state
     }
@@ -84,9 +65,10 @@ class ViewController: UIViewController {
         // Early exit if already running
         guard
             timer == nil ||
-            timer!.isValid == false else {
-            return
+                timer!.isValid == false else {
+                    return
         }
+        // Reset count
         count = 4
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ [weak self] timer in
             guard let count = self?.count, count > 1 else {
@@ -101,7 +83,10 @@ class ViewController: UIViewController {
     }
     
     private func saveScore(){
-        
+        let resultScore = PukanaConverter.getScore(fromLeftEye: faceInfoService.fetchLeftEyeValue(),
+                                                   rightEye: faceInfoService.fetchRightEyeValue(),
+                                                   tongue: faceInfoService.fetchTongueValue())
+        resultScoreLabel.text = "\(resultScore)"
     }
     
     
