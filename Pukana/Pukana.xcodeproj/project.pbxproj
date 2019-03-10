@@ -18,7 +18,6 @@
 		81E80B612234356E00CF6E80 /* FaceInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E80B602234356E00CF6E80 /* FaceInfoService.swift */; };
 		81E80B63223435FD00CF6E80 /* FaceInfoServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E80B62223435FD00CF6E80 /* FaceInfoServiceMock.swift */; };
 		81E80BA822353CD700CF6E80 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E80BA722353CD700CF6E80 /* Score.swift */; };
-		81E80BAA223544FF00CF6E80 /* FaceInfoServiceAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E80BA9223544FF00CF6E80 /* FaceInfoServiceAR.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		81E80B602234356E00CF6E80 /* FaceInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceInfoService.swift; sourceTree = "<group>"; };
 		81E80B62223435FD00CF6E80 /* FaceInfoServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceInfoServiceMock.swift; sourceTree = "<group>"; };
 		81E80BA722353CD700CF6E80 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
-		81E80BA9223544FF00CF6E80 /* FaceInfoServiceAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceInfoServiceAR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +101,6 @@
 			children = (
 				81E80B602234356E00CF6E80 /* FaceInfoService.swift */,
 				81E80B62223435FD00CF6E80 /* FaceInfoServiceMock.swift */,
-				81E80BA9223544FF00CF6E80 /* FaceInfoServiceAR.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -196,7 +193,6 @@
 				81E80B63223435FD00CF6E80 /* FaceInfoServiceMock.swift in Sources */,
 				81E80B5B2232A82800CF6E80 /* Assets.swift in Sources */,
 				81E80B462232844700CF6E80 /* AppDelegate.swift in Sources */,
-				81E80BAA223544FF00CF6E80 /* FaceInfoServiceAR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,9 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arskView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FP1-Dv-YZj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </arskView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oks-cl-2GU" userLabel="idleView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -117,18 +114,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BGP-KY-WCF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2JR-SU-6ek"/>
-                            <constraint firstItem="FP1-Dv-YZj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3tr-oJ-NBu"/>
                             <constraint firstAttribute="trailing" secondItem="Oks-cl-2GU" secondAttribute="trailing" id="8Hi-Pm-UgG"/>
                             <constraint firstItem="Oks-cl-2GU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Apx-cL-BNc"/>
                             <constraint firstItem="BGP-KY-WCF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Dvo-5q-Inu"/>
-                            <constraint firstAttribute="bottom" secondItem="FP1-Dv-YZj" secondAttribute="bottom" id="Ik8-Uh-qx9"/>
                             <constraint firstItem="Oks-cl-2GU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="IoI-nE-gbg"/>
-                            <constraint firstItem="FP1-Dv-YZj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PjK-5k-r7d"/>
                             <constraint firstItem="C57-nR-8Ek" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TO3-ZG-wfa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FP1-Dv-YZj" secondAttribute="trailing" id="cLd-oc-7oT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BGP-KY-WCF" secondAttribute="bottom" id="fKx-3S-fCh"/>
                             <constraint firstItem="BGP-KY-WCF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hs4-W1-45V"/>
                             <constraint firstItem="C57-nR-8Ek" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r3t-bV-ff2"/>
@@ -137,7 +130,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="arView" destination="FP1-Dv-YZj" id="IQW-q7-Pgy"/>
                         <outlet property="countdownLabel" destination="C57-nR-8Ek" id="A6F-Fe-RSf"/>
                         <outlet property="idleUIView" destination="Oks-cl-2GU" id="7gZ-cP-ZfH"/>
                         <outlet property="resultScoreLabel" destination="GP4-8J-TJN" id="GBk-IU-bsV"/>

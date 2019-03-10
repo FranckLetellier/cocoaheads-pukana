@@ -31,38 +31,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var countdownLabel: UILabel!
     @IBOutlet weak var idleUIView: UIView!
     @IBOutlet weak var resultUIView: UIView!
-    
-    private var finishPhotoView: UIView?
     @IBOutlet weak var resultScoreLabel: UILabel!
     
-    @IBOutlet weak var arView: ARSKView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAR()
         launchGame()
     }
     
-    private func setupAR(){
-        
-        let scene = SKScene(size: arView.bounds.size)
-        scene.scaleMode = .resizeFill
-        arView.presentScene(scene)
-        
-        let configuration = ARFaceTrackingConfiguration()
-        arView.session.run(configuration)
-    }
-    
     private func launchGame(){
-        let faceInfoService = FaceInfoServiceAR()
-        arView.delegate = faceInfoService
-        self.faceInfoService = faceInfoService
-        
         goTo(state: .idle)
     }
     
     private func resetUI(){
-        finishPhotoView?.removeFromSuperview()
         idleUIView.isHidden = true
         resultUIView.isHidden = true
         countdownLabel.isHidden = true
@@ -82,7 +63,6 @@ class ViewController: UIViewController {
             resultUIView.isHidden = false
             saveScore()
             flashView()
-            presentResultImage()
             
         case .setup: break
         }
@@ -91,9 +71,7 @@ class ViewController: UIViewController {
     
     private func launchTimer() {
         // Early exit if already running
-        guard
-            timer == nil ||
-                timer!.isValid == false else {
+        guard timer == nil || timer!.isValid == false else {
                     return
         }
         // Reset count
@@ -116,13 +94,6 @@ class ViewController: UIViewController {
                                                    tongue: faceInfoService.fetchTongueValue())
 
         resultScoreLabel.text = Score(value:resultScore).description
-    }
-    
-    private func presentResultImage() {
-        if let snapshot = arView.snapshotView(afterScreenUpdates: true){
-            resultUIView.insertSubview(snapshot, at: 0)
-            finishPhotoView = snapshot
-        }
     }
     
     private func flashView() {
@@ -148,8 +119,3 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: ARSKViewDelegate {
-    public func view(_ view: ARSKView, didUpdate node: SKNode, for anchor: ARAnchor) {
-        
-    }
-}
