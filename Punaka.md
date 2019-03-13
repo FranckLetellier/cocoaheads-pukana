@@ -1,7 +1,7 @@
 #Punaka Snipetty
 Add an ARView :
 ```
-    var arView: ARSKView!
+	var arView: ARSKView!
 ```
 
 Configurate The AR view:
